@@ -1,0 +1,18 @@
+[
+  {
+    "Id": 1,
+    "Name": "Softcover"
+  },
+  {
+    "Id": 2,
+    "Name": "Hardcover"
+  },
+  {
+    "Id": 3,
+    "Name": "PDF"
+  },
+  {
+    "Id": 4,
+    "Name": "eBook"
+  }
+]

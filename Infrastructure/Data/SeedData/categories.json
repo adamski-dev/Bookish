@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "Name": "Fantasy"
+  },
+  {
+    "Id": 2,
+    "Name": "Mystery"
+  },
+  {
+    "Id": 3,
+    "Name": "Programming"
+  },
+  {
+    "Id": 4,
+    "Name": "Romance"
+  },
+  {
+    "Id": 5,
+    "Name": "Sci-Fi"
+  },
+  {
+    "Id": 6,
+    "Name": "Thriller"
+  }
+]
