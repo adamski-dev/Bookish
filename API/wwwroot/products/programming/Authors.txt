@@ -1,0 +1,11 @@
+The Constitution of Algorithms - Florian Jaton
+Bootstrap Quick Start - Jacob Lett
+Jumping Into C++ - Alex Allain
+The Little Book of C# - Huw Collingbourne
+Clean Code - Robert C. Martin
+CSS3 Foundations - Ian Lunn
+HTML5 Programming - Eric Freeman & Elisabeth Robson
+Java Programming - Joyce Farrell
+JavaScript & Jquery - Jon Duckett
+Programming PHP - Kevin Tatroe & Peter Macintyre 
+
