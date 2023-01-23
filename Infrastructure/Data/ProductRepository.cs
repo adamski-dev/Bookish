@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository
     {
-        private readonly StoreContext _context;
+        /* private readonly StoreContext _context;
         public ProductRepository(StoreContext context)
         {
             _context = context;
@@ -40,6 +40,6 @@ namespace Infrastructure.Data
         public async Task<IReadOnlyList<ProductType>> GetProductTypesAsync()
         {
             return await _context.ProductTypes.ToListAsync();
-        }
+        } */
     }
 }
