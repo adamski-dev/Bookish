@@ -11,3 +11,16 @@
     right: 32px;
     font-weight: 600;
 }
+
+a {
+    text-decoration: none;
+    color: #343a40;
+
+    &.active {
+        color: orange;
+    }
+}
+
+.logo {
+    cursor: pointer;
+}

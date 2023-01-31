@@ -1,0 +1,25 @@
+<div *ngIf="product" class="row">
+    <div class="col-4">
+        <img src="{{product.pictureUrl}}" alt="{{product.title}}" class="border border-dark img-thumbnail">
+    </div>
+    <div class="col-8 mt-5">
+        <h2>{{product.title}}</h2>
+        <span style="font-size: large;">Author: {{product.author}}</span>
+
+        <div class="mt-4">
+            <span style="font-size: 20px;"><strong>{{ product.price | currency }}   ({{ product.productType }})</strong></span>
+        </div>
+    
+        <div class="d-flex justify-content-left align-items-center mt-4">
+            <i class="fa fa-minus-circle text-warning me-2" style="cursor: pointer; font-size: 1.5em;"></i>
+            <span class="font-weight-bold" style="font-size: 1.5em;">2</span>
+            <i class="fa fa-plus-circle text-warning ms-2" style="cursor: pointer; font-size: 1.5em;"></i>
+            <button class="btn btn-outline-secondary ms-4">Add to cart</button>
+        </div>
+        <div class="row mt-4">
+            <h4>Description</h4>
+            <p>{{product.description}}</p>
+        </div>
+    </div>
+</div>
+
