@@ -43,7 +43,7 @@ namespace Infrastructure.Data.Migrations
                     Title = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
                     Author = table.Column<string>(type: "TEXT", maxLength: 70, nullable: false),
                     Description = table.Column<string>(type: "TEXT", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Price = table.Column<double>(type: "decimal(18,2)", nullable: false),
                     PictureUrl = table.Column<string>(type: "TEXT", nullable: false),
                     ProductCategoryId = table.Column<int>(type: "INTEGER", nullable: false),
                     ProductTypeId = table.Column<int>(type: "INTEGER", nullable: false)
