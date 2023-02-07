@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row">
+    <div class="row" *ngIf="types.length > 0 && categories.length > 0">
         <section class="col-3">
             <h5 class="text-warning ml-3">Sort</h5>
             <select class="form-select mb-3" (change)="onSortSelected($event.target.value)">
@@ -41,7 +41,8 @@
                     [pageSize]="shopParams.pageSize"
                 ></app-paging-header>
                 <div class="mt-2">
-                    <input (keyup.enter)="onSearch()" type="text" class="d-inline form-control me-2 " placeholder="Search" style="width: 300px;" #search>
+                    <input (keyup.enter)
+                    ="onSearch()" type="text" class="d-inline form-control me-2 " placeholder="Search" style="width: 300px;" #search>
                     <button (click)="onSearch()" class="d-inline btn btn-outline-primary my-2 ">Search</button>
                     <button (click)="onReset()" class="d-inline btn btn-outline-success ms-2 my-2 ">Reset</button>
                 </div>
