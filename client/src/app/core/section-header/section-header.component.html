@@ -1,6 +1,6 @@
 <ng-container *ngIf="$any(bcService.breadcrumbs$ | async) as breadcrumbs">
     <section *ngIf="breadcrumbs[breadcrumbs.length -1].label !== 'Home'" 
-        class="py-5 mb-4" style="margin-top: 105px; background-color: #B6D0E2;">
+        class="py-5 mb-4" style="margin-top: 105px; background-color: #dbe8f1;">
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-9">
@@ -9,7 +9,7 @@
                 <div class="col-3">
                     <xng-breadcrumb>
                         <ng-container *xngBreadcrumbItem="let breadcrumb">
-                            <strong>{{breadcrumb | titlecase}}</strong>
+                            {{breadcrumb | titlecase}}
                         </ng-container>
                     </xng-breadcrumb>
                 </div>
