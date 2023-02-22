@@ -31,6 +31,13 @@ namespace API
             });
 
             services.AddApplicationServices();
+
+            services.AddIdentityServices(_configuration);
+            //removed the below into extensions
+            /* services.AddDbContext<AppIdentityDbContext>(x => 
+            {
+                x.UseSqlite(_configuration.GetConnectionString("IdentityConnection"));
+            }); */
             
             services.AddSwaggerDocumentation();
             services.AddCors(options => 
@@ -58,6 +65,8 @@ namespace API
             
             app.UseCors("CorsPolicy");
 
+            app.UseAuthentication();
+            
             app.UseAuthorization();
 
             app.UseSwaggerDocumentation();

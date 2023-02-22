@@ -544,7 +544,7 @@
 	  "Author": "Huw Collingbourne",
     "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
     "Price": 24,
-    "PictureUrl": "products/programming/C#.jpg",
+    "PictureUrl": "products/programming/Csharp.jpg",
 	  "ProductCategoryId": 3,
     "ProductTypeId": 1
   },
@@ -553,7 +553,7 @@
 	  "Author": "Huw Collingbourne",
     "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
     "Price": 28,
-    "PictureUrl": "products/programming/C#.jpg",
+    "PictureUrl": "products/programming/Csharp.jpg",
 	  "ProductCategoryId": 3,
     "ProductTypeId": 2
   },
@@ -562,7 +562,7 @@
 	  "Author": "Huw Collingbourne",
     "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
     "Price": 12,
-    "PictureUrl": "products/programming/C#.jpg",
+    "PictureUrl": "products/programming/Csharp.jpg",
 	  "ProductCategoryId": 3,
     "ProductTypeId": 3
   },
@@ -571,7 +571,7 @@
 	  "Author": "Huw Collingbourne",
     "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
     "Price": 21,
-    "PictureUrl": "products/programming/C#.jpg",
+    "PictureUrl": "products/programming/Csharp.jpg",
 	  "ProductCategoryId": 3,
     "ProductTypeId": 4
   },
