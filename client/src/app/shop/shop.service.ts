@@ -1,5 +1,5 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { ICategory } from '../shared/models/category';
 import { IPagination } from '../shared/models/pagination';
@@ -10,11 +10,14 @@ import { IProduct } from '../shared/models/product';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ShopService {
 
-  baseUrl = 'https://localhost:5001/api/'
+  baseUrl = 'https://localhost:5001/api/';
 
   constructor(private http: HttpClient) {}
+
+
 
   getProducts(shopParams: ShopParams){
 

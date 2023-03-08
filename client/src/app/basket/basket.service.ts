@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environment/environment';
 import { Basket, IBasketItem, IBasketTotal } from '../shared/models/basket';
+import { IDeliveryMethod } from '../shared/models/deliveryMethod';
 import { IProduct } from '../shared/models/product';
 
 @Injectable({
@@ -18,7 +19,14 @@ export class BasketService {
   private basketTotalSource = new BehaviorSubject<IBasketTotal | null>(null);
   basketTotal$ = this.basketTotalSource.asObservable();
 
+  shipping = 0;
+
   constructor(private http: HttpClient) { }
+
+  setShippingPrice(deliveryMethod: IDeliveryMethod){
+    this.shipping = deliveryMethod.price;
+    this.calculateTotalValue();
+  }
 
   getBasket(id: string){
     return this.http.get<Basket>(this.baseUrl + 'basket?id=' + id).subscribe({
@@ -66,11 +74,15 @@ export class BasketService {
   deleteBasket(basket: Basket) {
     return this.http.delete(this.baseUrl + 'basket?id=' + basket.id).subscribe({
       next: () => {
-        this.basketSource.next(null);
-        this.basketTotalSource.next(null);
-        localStorage.removeItem('basket_id');
+        this.deleteLocalBasket();
       }
     })
+  }
+
+  deleteLocalBasket(){
+    this.basketSource.next(null);
+    this.basketTotalSource.next(null);
+    localStorage.removeItem('basket_id');
   }
 
   private addOrUpdateItem(items: IBasketItem[], itemToAdd: IBasketItem, quantity: number): IBasketItem[] {
@@ -105,10 +117,9 @@ export class BasketService {
   private calculateTotalValue(){
     const basket = this.getCurrentBasketValue();
     if(!basket) return;
-    const shipping = 0;
     const subtotal = basket.items.reduce((sum, item) => (item.price * item.quantity) + sum, 0);
-    const total = subtotal + shipping;
-    this.basketTotalSource.next({shipping, total, subtotal})
+    const total = subtotal + this.shipping;
+    this.basketTotalSource.next({shipping: this.shipping, total, subtotal})
   }
 
   private isProduct(item: IProduct | IBasketItem): item is IProduct{
