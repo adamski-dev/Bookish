@@ -11,14 +11,19 @@ export interface IBasketItem {
     type: string;
 }
 
-export interface Basket {
+export interface IBasket {
     id: string;
     items: IBasketItem[];
+    clientSecret?: string;
+    paymentIntentId?: string;
+    deliveryMethodId?: number;
+    shippingPrice: number;
 }
 
-export class Basket implements Basket {   
+export class Basket implements IBasket {   
     id = cuid();
     items: IBasketItem[] = [];
+    shippingPrice: 0;
 }
 
 export interface IBasketTotal {
