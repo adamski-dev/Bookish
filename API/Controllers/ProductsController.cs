@@ -37,6 +37,7 @@ namespace Infrastructure.Controllers
             
         }
 
+        [Cached(600)]
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts(
             [FromQuery] ProductSpecParams productParams)
@@ -53,6 +54,7 @@ namespace Infrastructure.Controllers
 
         }
 
+        [Cached(600)]
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -66,12 +68,14 @@ namespace Infrastructure.Controllers
             return _mapper.Map<Product, ProductToReturnDto>(product);
         }
 
+        [Cached(600)]
         [HttpGet("categories")]
         public async Task<ActionResult<ProductCategory>> GetProductCategories()
         {
             return Ok(await _productCategoryRepository.ListAllAsync());
         }
-
+        
+        [Cached(600)]
         [HttpGet("types")]
         public async Task<ActionResult<ProductType>> GetProductTypes()
         {

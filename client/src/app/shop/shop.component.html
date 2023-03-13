@@ -1,9 +1,10 @@
 <div class="container">
-    <div class="row" *ngIf="types.length > 0 && categories.length > 0" >
+    <div class="row" *ngIf="categories && types " >
         <section class="col-3">
             <h5 class="text-warning ml-3">Sort</h5>
             <select class="form-select mb-3" (change)="onSortSelected($event.target.value)">
                 <option *ngFor="let sort of sortOptions"
+                    [selected]="shopParams.sort === sort.value"
                     [value]="sort.value"
                 >
                     {{sort.name}}
@@ -53,14 +54,14 @@
                   <app-product-item [product]="item"></app-product-item>
                 </div>
             </div>
-            <div class="d-flex justify-content-center my-4" *ngIf="totalCount > 0">
+            <div class="d-flex justify-content-center my-4" *ngIf="totalCount != 0">
                 <app-paging
                     [totalCount]="totalCount"
                     [pageSize]="shopParams.pageSize"
+                    [pageNumber]="shopParams.pageNumber"
                     (pageChanged)="onPageChanged($event)"
                 ></app-paging>
             </div>
-            
         </section>
     </div>
 </div>

@@ -5,8 +5,9 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { delay, finalize, Observable } from 'rxjs';
+import { delay, finalize, identity, Observable } from 'rxjs';
 import { BusyService } from '../services/busy.service';
+import { environment } from 'src/environment/environment';
 
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {
@@ -17,7 +18,8 @@ export class LoadingInterceptor implements HttpInterceptor {
     
     if(
         request.url.includes('emailExists') ||
-        request.method === 'POST' && request.url.includes('orders')
+        request.method === 'POST' && request.url.includes('orders') ||
+        request.method === 'DELETE'
       )
     {
       return next.handle(request);
@@ -25,7 +27,7 @@ export class LoadingInterceptor implements HttpInterceptor {
     
     this.busyService.busy();
     return next.handle(request).pipe(
-      delay(1000),
+      (environment.production ? identity : delay(1000)),
       finalize(() => this.busyService.idle())
     );
   }
