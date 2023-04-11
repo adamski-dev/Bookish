@@ -1,6 +1,8 @@
 # Bookish
 Book store written in C# and Angular
 
+### https://bookish.adampoplawski.it/
+
 * For testing payment functionality you can use a valid stripe test card number: 4242 4242 4242 4242 & valid expiry date with any 3 digit cvv to complete fake purchase.
 
 * Database is seeded with a test user: User@test.com & password: User1234!
