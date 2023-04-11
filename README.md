@@ -18,3 +18,4 @@ Book store written in C# and Angular
 * Angular Reactive Forms
 * Accepting payments using Stripe
 * Angular Re-usable form components
+* Angular Validation
